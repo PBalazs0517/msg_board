@@ -1,0 +1,28 @@
+extends layout
+
+block content
+  main 
+    .message_app 
+      if message_list.length > 0
+        section.message_display 
+          if message_list.length > 0 
+            ul.messages
+              for message in message_list
+                li
+                  h3 #{message.name}
+                  p #{message.msg} 
+      else 
+        section.message_display.no_msg 
+          p There are no messages
+      form(method='POST', action='')
+        label(for="user_name") 
+        input#input_user_name( type='text', placeholder='Enter your name', required='true', name='user_name', value=(message === undefined ? '' : message.name ))
+        label(for="message") 
+        input#input_message(type='text', placeholder='Enter your message', required='true', name='message', value=(message === undefined  ? '' : message.msg ))
+        button#submit(type='submit')
+  if error_list 
+    ul.error_popup
+      for error in error_list 
+        li Error: #{error.msg}
+      
+      

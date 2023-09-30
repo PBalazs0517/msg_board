@@ -1,0 +1,91 @@
+* {
+  box-sizing: border-box;
+}
+
+html, body, main {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.message_app {
+  width: max(30%, 400px);
+  height: 80%;
+  background-color: rgb(248, 248, 248);
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0px 0px 25px 2px #3b96ffa8;
+  overflow-y: hidden;
+}
+.message_display {
+  flex: auto;
+  padding: 1rem;
+  overflow-y: auto;
+}
+.messages {
+  width: 100%;
+  list-style: none;
+  padding: 0;
+}
+li {
+  padding-inline: 1rem;
+  border-left: #3b96ffa8 solid 2px;
+  border-right: #3b96ffa8 solid 2px;
+  width: 100%;
+  overflow-wrap: break-word;
+}
+.messages l
+.no_msg {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+
+#input_user_name {
+  grid-area: name;
+}
+#input_message {
+  grid-area: message;
+}
+input {
+  display: block;
+  height: 2rem;
+  font-size: 1rem;
+  border: none;
+  outline: 0;
+  background-color: transparent;
+}
+input:hover, 
+input:focus {
+  border-bottom: 2px #3b96ffa8 solid;
+}
+button {
+  grid-area: submit;
+  aspect-ratio: 1/1;
+  background-color: transparent;
+  background-image: url('../images/send-svgrepo-com.svg');
+  background-size: 60%;
+  background-position: center;
+  background-repeat: no-repeat;
+  border: none;
+  outline: none;
+  transition: 0.1;
+}
+button:hover {
+  background-size: 65%;
+}
+form {
+  padding: 0.6rem;
+  display: grid;
+  gap: 3px;
+  grid-template: repeat(2, 1fr) / 1fr 4rem;
+  grid-template-areas: 
+    "name submit"
+    "message submit";
+}
+
